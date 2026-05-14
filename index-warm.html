@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>實康復健科診所 - 淡水實康復健科診所</title>
+  <meta name="description" content="淡水實康復健科診所，提供優質復健療程、早期療育及疼痛管理，結合專業醫師與治療師，給您便捷人性化的醫療服務。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:     #faf7f2;
+      --warm-white:#fffdf9;
+      --primary:   #c17f5a;
+      --primary-dk:#9d6242;
+      --primary-lt:#e8c4a8;
+      --accent:    #7a9e87;
+      --accent-lt: #b5d1bc;
+      --text-dark: #3d2e22;
+      --text-mid:  #5c4a38;
+      --text-muted:#8c7b6b;
+      --border:    #e8ddd3;
+      --max-w:     980px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 15px;
+      color: var(--text-muted);
+      background: var(--cream);
+      line-height: 1.8;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dk); }
+
+    /* ── Header ── */
+    #header {
+      background: var(--warm-white);
+      text-align: center;
+      padding: 36px 20px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    #site-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 3px;
+    }
+    #site-title a { color: inherit; }
+    #site-title a:hover { color: var(--primary); }
+
+    /* ── Navigation ── */
+    #navigation {
+      background: var(--warm-white);
+      text-align: center;
+      padding: 0 20px 20px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 13px;
+    }
+    #navigation ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      gap: 2px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    #navigation li a {
+      display: block;
+      padding: 6px 14px;
+      color: var(--text-mid);
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+    #navigation li a:hover,
+    #navigation li.active a {
+      background: var(--primary-lt);
+      color: var(--primary-dk);
+    }
+
+    /* ── Slideshow Hero ── */
+    .hero {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+    .slideshow { position: absolute; inset: 0; }
+    .slide {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: slideFade 65s linear infinite;
+    }
+    .slide:nth-child(1) { animation-delay: 0s; }
+    .slide:nth-child(2) { animation-delay: 5s; }
+    .slide:nth-child(3) { animation-delay: 10s; }
+    .slide:nth-child(4) { animation-delay: 15s; }
+    .slide:nth-child(5) { animation-delay: 20s; }
+    .slide:nth-child(6) { animation-delay: 25s; }
+    .slide:nth-child(7) { animation-delay: 30s; }
+    .slide:nth-child(8) { animation-delay: 35s; }
+    .slide:nth-child(9) { animation-delay: 40s; }
+    .slide:nth-child(10) { animation-delay: 45s; }
+    .slide:nth-child(11) { animation-delay: 50s; }
+    .slide:nth-child(12) { animation-delay: 55s; }
+    .slide:nth-child(13) { animation-delay: 60s; }
+    @keyframes slideFade {
+      0%           { opacity: 0; }
+      1.85%   { opacity: 1; }
+      5.85%  { opacity: 1; }
+      7.69%  { opacity: 0; }
+      100%         { opacity: 0; }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to bottom,
+        rgba(61,46,34,0.3) 0%,
+        rgba(61,46,34,0.6) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      height: 100%; text-align: center;
+      padding: 0 20px;
+    }
+    .hero-en {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--primary-lt);
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    .hero h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 17px;
+      color: rgba(255,255,255,0.92);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+      margin-bottom: 36px;
+    }
+    .btn-hero {
+      display: inline-block;
+      padding: 13px 36px;
+      background: var(--primary);
+      color: #fff;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(193,127,90,0.5);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      letter-spacing: 1px;
+    }
+    .btn-hero:hover {
+      background: var(--primary-dk);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(193,127,90,0.6);
+    }
+
+    /* ── Content ── */
+    #content-wrapper {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+
+    /* ── Intro ── */
+    .intro-section {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 44px 52px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .intro-section::before {
+      content: '＋';
+      position: absolute;
+      top: -20px; right: 40px;
+      font-size: 120px;
+      color: var(--primary-lt);
+      opacity: 0.3;
+      font-family: serif;
+      line-height: 1;
+    }
+    .intro-section h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--primary-lt);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .intro-section h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 24px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+    .intro-section p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.9;
+    }
+    .intro-section p:last-child { margin-bottom: 0; }
+
+    /* ── Feature Cards ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 8px 32px rgba(193,127,90,0.18);
+      transform: translateY(-4px);
+    }
+    .feature-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+    .feature-card-body {
+      padding: 24px 26px 28px;
+    }
+    .feature-card h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .feature-card ul {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+    .feature-card ul li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      padding: 3px 0 3px 16px;
+      position: relative;
+    }
+    .feature-card ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--primary-lt);
+      font-size: 10px;
+      top: 6px;
+    }
+    .btn-outline {
+      display: inline-block;
+      padding: 8px 22px;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      font-size: 13px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* ── Chat Bubble ── */
+    .chat-bubble {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+    }
+    .chat-bubble a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 20px rgba(193,127,90,0.45);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .chat-bubble a:hover {
+      background: var(--primary-dk);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .chat-bubble svg {
+      width: 17px; height: 17px;
+      fill: none; stroke: currentColor;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── Footer ── */
+    #footer {
+      background: var(--text-dark);
+      padding: 44px 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+    #footer-content {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .footer-brand { flex: 1; min-width: 220px; }
+    .footer-brand h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-lt);
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+    .footer-brand p { font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-contact { flex: 1; min-width: 200px; }
+    .footer-contact p { margin-bottom: 4px; }
+    .footer-contact a { color: rgba(255,255,255,0.6); }
+    .footer-contact a:hover { color: var(--primary-lt); }
+    .footer-bottom {
+      width: 100%;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 20px;
+      padding-top: 16px;
+      font-size: 12px;
+      text-align: center;
+      color: rgba(255,255,255,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero { height: 360px; }
+      #site-title { font-size: 22px; }
+      .intro-section { padding: 28px 24px; }
+      .features { grid-template-columns: 1fr; }
+      #navigation li a { padding: 5px 10px; font-size: 12px; }
+      .chat-bubble { bottom: 18px; right: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <div id="site-title"><a href="index.html">實康復健科診所</a></div>
+</div>
+
+<nav id="navigation" aria-label="主選單">
+  <ul>
+    <li class="active"><a href="index.html">首頁</a></li>
+    <li><a href="team-member.html">醫療團隊</a></li>
+    <li><a href="information.html">門診資訊及聯絡方式</a></li>
+    <li><a href="pain-management.html">疼痛管理</a></li>
+    <li><a href="treatment.html">診療項目</a></li>
+    <li><a href="group-therapy.html">專業課程</a></li>
+    <li><a href="health-education.html">衛教資訊</a></li>
+    <li><a href="ot.html">兒童治療公告社群</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="slideshow">
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__3691127.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__8897400.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__2166273.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__2269723.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__3637067.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__6257638.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__458000.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__2266977.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__9445645.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__9089690.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__1961320.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__4717801.jpg')"></div>
+      <div class="slide" style="background-image:url('uploads/5/3/6/5/53656235/__8496639.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-en">Smart Care · Rehabilitation Clinic</p>
+    <h1>實康復健科診所</h1>
+    <p>我們提供優質的復健療程、早期療育及疼痛管理</p>
+    <a href="information.html" class="btn-hero">瞭解更多</a>
+  </div>
+</section>
+
+<div id="content-wrapper">
+  <section class="intro-section">
+    <h2>關於實康</h2>
+    <p>實康復健科診所於民國八十六年三月十六日成立，我們以嶄新先進的復健設備，結合實務經驗豐富的復健科專科醫師及專業治療師，親切關懷的接待、溫馨舒適的候診及治療空間，提供了便捷及人性化的醫療服務。</p>
+    <p>有感於現代復健醫學的進展，實康不同於一般只強調電療的傳統基礎復健，而秉持著復健醫學即「運動醫學」的理念，鼓勵病人透過積極運動達到自我治療、自我保健的長期療效。也因而減少患者長期依賴健保、損耗醫療資源的問題！</p>
+    <p>為提昇醫療品質，成人的「肩頸復健團體班」、「下肢復健團體班」及「背痛班」已行之多年，專業的彼拉提斯課程更讓病人受益良多，解決了他們的多年舊疾！</p>
+    <p>腦性麻痺、發展遲緩兒、自閉症、過動兒……等兒童醫療問題，是許多父母心中的痛。我們為大淡水地區提供了專業的兒童治療，兒童治療區佔地50坪。本診所長期為新北市衛生局指定之「發展遲緩兒童早期醫療院所」，解決了無數家長兒童治療的困擾。</p>
+    <p>本院專業物理治療師、職能治療師、語言治療師在工作之餘，定期進行病例討論、專題報告，並參與在職進修課程，由各大醫院資深治療師不定期蒞臨指導。新進人員也必須至少半年至醫學中心接受專業訓練，以期在社區基層提供最紮實的復健醫療！</p>
+  </section>
+
+  <div class="features">
+    <article class="feature-card">
+      <img src="uploads/5/3/6/5/53656235/1433264243.png" alt="實康復健治療室" class="feature-img">
+      <div class="feature-card-body">
+        <h2>疼痛管理</h2>
+        <p>疼痛是身體給我們的警訊。經由專業醫師的診斷及治療，讓疼痛遠離日常生活，增進您的生活品質。</p>
+        <a href="pain-management.html" class="btn-outline">瞭解更多</a>
+      </div>
+    </article>
+    <article class="feature-card">
+      <img src="uploads/5/3/6/5/53656235/1433301236.png" alt="實康兒童治療區" class="feature-img">
+      <div class="feature-card-body">
+        <h2>早期療育</h2>
+        <p>感覺統合異常、發展遲緩、語言發展遲緩，經由早期診斷及治療的介入，兒童發展預後越佳。</p>
+        <a href="ot.html" class="btn-outline">瞭解更多</a>
+      </div>
+    </article>
+    <article class="feature-card">
+      <img src="uploads/5/3/6/5/53656235/1433264002.png" alt="實康彼拉提斯教室" class="feature-img">
+      <div class="feature-card-body">
+        <h2>專業課程</h2>
+        <ul>
+          <li>彼拉提斯健身教室</li>
+          <li>治療性瑜珈健身教室</li>
+          <li>中風復健團體訓練教室</li>
+          <li>肩頸痠痛教室</li>
+          <li>核心復健教室</li>
+          <li>兒童感覺統合訓練教室</li>
+        </ul>
+        <a href="group-therapy.html" class="btn-outline">瞭解更多</a>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="chat-bubble">
+  <a href="https://smartcare-chatbot.vercel.app/chat.html" target="_blank" rel="noopener" aria-label="AI客服">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    AI 客服助理
+  </a>
+</div>
+
+<footer id="footer">
+  <div id="footer-content">
+    <div class="footer-brand">
+      <h2>實康復健科診所</h2>
+      <p>Smart Care Rehabilitation Clinic</p>
+    </div>
+    <div class="footer-contact">
+      <p>地址：新北市淡水區學府路36號2樓</p>
+      <p>電話：<a href="tel:0226292000">02-2629-2000</a></p>
+      <p>E-mail：<a href="mailto:shikang.tsrc@msa.hinet.net">shikang.tsrc@msa.hinet.net</a></p>
+    </div>
+    <div class="footer-bottom">© 實康復健科診所 Smart Care Rehabilitation Clinic</div>
+  </div>
+</footer>
+
+</body>
+</html>
